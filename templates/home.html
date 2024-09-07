@@ -1,39 +1,32 @@
 {% extends "base.html" %}
 
-<<<<<<< Updated upstream {% block header %} <title>Boggle Game</title>{% endblock %}
-  =======
-  {% block header %}
-  <title>Boggle Game</title>
-  {% endblock %}
-  >>>>>>> Stashed changes
+{% block header %}
+<title>Boggle Game</title>
+{% endblock %}
 
-  {% block content %}
-  <h1>Welcome to Boggle!</h1>
+{% block content %}
+<h1>Welcome to Boggle!</h1>
 
 
-  <h2><span id="time">60</span> Seconds</span></h2>
-  <p>High Score:
-    <b>{{ highscore }}</b>
-    in {{ nplays }} plays
-  </p>
+<h2><span id="time">60</span> Seconds</span></h2>
 
-  <h3>Score: <span id="score">0</span></h3>
-  <p>Submit Answer:</p>
-  <form id="boggleForm">
-    <<<<<<< Updated upstream <input type="text" id="input" name="input" required>
-      <button type="submit">Submit</button>
-      =======
-      <input type="text" id="word" name="input" placeholder="Enter a word" required>
-      <button type="submit">Submit</button>
-      >>>>>>> Stashed changes
-  </form>
-  <div id="result"></div>
+<p>High Score:
+  <b id="highscore">{{ highscore }}</b>
+  in <span id="nplays">{{ nplays }}</span> plays
+</p>
 
-  <p>The current game board is:</p>
-  <ul>
-    {% for row in boggle_game.make_board() %}
-    <li>{{ row }}</li>
-    {% endfor %}
-  </ul>
-  <<<<<<< Updated upstream=======>>>>>>> Stashed changes
-    {% endblock %}
+<h3>Score: <span id="score">0</span></h3>
+<p>Submit Answer:</p>
+<form id="boggleForm">
+  <input type="text" id="word" name="input" placeholder="Enter a word" required>
+  <button type="submit">Submit</button>
+</form>
+<div id="result"></div>
+
+<p>The current game board is:</p>
+<ul>
+  {% for row in board%}
+  <li>{{ row }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
